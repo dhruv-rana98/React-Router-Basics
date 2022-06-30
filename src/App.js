@@ -3,12 +3,16 @@ import Products from "./pages/Products";
 import Welcome from "./pages/Welcoome";
 import MainHeader from "./components/MainHeader";
 import ProductDetail from "./pages/ProductDetail";
+import { Redirect } from "react-router-dom";
 function App() {
   return (
     <div>
       <MainHeader />
       <main>
         <Switch>
+          <Route path="/" exact>
+            <Redirect to="/welcome" />
+          </Route>
           <Route path="/welcome">
             <Welcome />
           </Route>
